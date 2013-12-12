@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="true" />
+	
+	<package name="user" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="sql">/error/sqlerror.jsp</result>
+			<result name="notfound">/userlogin/usernotfound.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="sql" exception="java.sql.SQLException"></exception-mapping>
+			<exception-mapping result="notfound" exception="org.hibernate.ObjectNotFoundException"></exception-mapping>
+		</global-exception-mappings>
+		<action name="userAction" class="com.gs.action.UserAction">
+			<result name="success">/register/registersuccess.jsp</result>
+			<result name="fail">/register/registerfail.jsp</result>
+			<result name="dif">/register/registerdif.jsp</result>
+			<result name="list">/user/userlist.jsp</result>
+			<result name="loadStudent">/user/loadstudent.jsp</result>
+		</action>
+		<action name="UserDeleteAction" class="com.gs.action.UserDeleteAction">
+			<result name="del">/user/deletesuccess.jsp</result>
+		</action>
+		<action name="UserLoginAction" class="com.gs.action.UserLoginAction">
+			<result name="success">/userlogin/loginsuccess.jsp</result>
+			<result name="fail">/userlogin/loginfail.jsp</result>
+		</action>
+		<action name="LoadUserAction" class="com.gs.action.UserAction" method="loadStudent">
+			<result name="loadStudent">/user/loadstudent.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="book" namespace="/" extends="struts-default">
+		<action name="bookAction" class="com.gs.action.BookAction">
+			<result name="success">/book/registersuccess.jsp</result>
+			<result name="fail">/book/registerfail.jsp</result>
+			<result name="list">/book/booklist.jsp</result>
+			<result name="loadBook">/book/loadbook.jsp</result>
+		</action>
+		<action name="bookDeleteAction" class="com.gs.action.BookDeleteAction">
+			<result name="success">/book/deletesuccess.jsp</result>
+			<result name="fail">/book/deletefail.jsp</result>
+		</action>
+	</package>
+	
+	<package name="borrow" namespace="/" extends="struts-default">
+		<action name="borrowAction" class="com.gs.action.BorrowAction">
+			<result name="success">/bookbus/borrowbooksuccess.jsp</result>
+			<result name="beenBorrow">/bookbus/hasbeenborrowed.jsp</result>
+		</action>
+		<action name="returnAction" class="com.gs.action.ReturnAction" >
+			<result name="success">/bookbus/returnbooksuccess.jsp</result>
+		</action>
+	</package>
+	<constant name="struts.objectFactory" value="spring" />
+</struts>

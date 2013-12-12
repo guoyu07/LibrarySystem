@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="user" location="241,165" size="910,350">
+    <action name="userAction" location="311,51" size="150,125">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="registersuccess.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="registerfail.jsp" />
+      </result>
+      <result name="dif">
+        <resourceEdge source="dif" routing="0" target="registerdif.jsp" />
+      </result>
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="userlist.jsp" />
+      </result>
+      <result name="loadStudent">
+        <resourceEdge source="loadStudent" routing="0" target="loadstudent.jsp" />
+      </result>
+    </action>
+    <action name="UserDeleteAction" location="311,268" size="150,41">
+      <result name="del">
+        <resourceEdge source="del" routing="0" target="deletesuccess.jsp" />
+      </result>
+    </action>
+    <action name="UserLoginAction" location="66,258" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="loginsuccess.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="loginfail.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="book" location="240,900" size="385,350">
+    <action name="bookAction" location="66,62" size="150,104">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="registersuccess.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="registerfail.jsp" />
+      </result>
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="booklist.jsp" />
+      </result>
+      <result name="loadBook">
+        <resourceEdge source="loadBook" routing="0" target="loadbook.jsp" />
+      </result>
+    </action>
+    <action name="bookDeleteAction" location="66,258" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deletesuccess.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="deletefail.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="borrow" location="1069,780" size="280,140">
+    <action name="borrowAction" location="64,41" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="borrowbooksucess.jsp" />
+      </result>
+      <result name="beenBorrow">
+        <resourceEdge source="beenBorrow" routing="0" target="hasbeenborrowed.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="registersuccess.jsp" path="/register/registersuccess.jsp" location="777,570" size="150,55" />
+  <webResource name="registerfail.jsp" path="/register/registerfail.jsp" location="1035,570" size="150,55" />
+  <webResource name="registerdif.jsp" path="/register/registerdif.jsp" location="1211,220" size="150,55" />
+  <webResource name="userlist.jsp" path="/user/userlist.jsp" location="566,10" size="150,55" />
+  <webResource name="loadstudent.jsp" path="/user/loadstudent.jsp" location="27,220" size="150,55" />
+  <webResource name="deletesuccess.jsp" path="/user/deletesuccess.jsp" location="546,570" size="150,55" />
+  <webResource name="loginsuccess.jsp" path="/userlogin/loginsuccess.jsp" location="10,395" size="150,55" />
+  <webResource name="loginfail.jsp" path="/userlogin/loginfail.jsp" location="304,570" size="150,55" />
+  <webResource name="registersuccess.jsp" path="/book/registersuccess.jsp" location="486,1295" size="150,55" />
+  <webResource name="registerfail.jsp" path="/book/registerfail.jsp" location="26,955" size="150,55" />
+  <webResource name="booklist.jsp" path="/book/booklist.jsp" location="314,745" size="150,55" />
+  <webResource name="loadbook.jsp" path="/book/loadbook.jsp" location="694,955" size="150,55" />
+  <webResource name="deletesuccess.jsp" path="/book/deletesuccess.jsp" location="17,1130" size="150,55" />
+  <webResource name="deletefail.jsp" path="/book/deletefail.jsp" location="311,1305" size="150,55" />
+  <webResource name="borrowbooksucess.jsp" path="/bookbus/borrowbooksucess.jsp" location="717,761" size="150,55" />
+  <webResource name="hasbeenborrowed.jsp" path="/bookbus/hasbeenborrowed.jsp" location="701,874" size="150,55" />
+</Struts2Diagram>
+
